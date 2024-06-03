@@ -1,40 +1,55 @@
 "use client";
 import { IconX } from "@/public/icon";
 import { useState } from "react";
+
 const images = [
-    "https://via.placeholder.com/800x400.png?text=First+Image",
-    "https://via.placeholder.com/800x400.png?text=Second+Image",
-    "https://via.placeholder.com/800x400.png?text=Third+Image"
-  ];
+    "https://wallpapercave.com/wp/wp10238271.jpg", 
+    "https://wallpapercave.com/wp/wp10238269.jpg",
+    "https://wallpapercave.com/dwp1x/wp10238267.jpg"
+];
 
-export default function Carousel(){
-    const [activeIndex, setActiveIndex] = useState(1);
+export default function Carousel() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [direction, setDirection] = useState<"next" | "prev">("prev");
 
-    function handleNext(){
-        setActiveIndex((activeIndex + 1) % images.length);
+    function handleNext() {
+        setDirection("next");
+        setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
     }
-    function handlePrev(){
-        setActiveIndex((activeIndex - 1 + images.length) % images.length);
+
+    function handlePrev() {
+        setDirection("prev");
+        setActiveIndex((prevIndex) => (prevIndex - 1) % images.length);
     }
-    return(
+
+    return (
         <> 
-        <div className="flex justify-center">
-            <div className="w-full md:w-3/4 relative bg-black flex ">
-                <div className="w-full h-full absolute">
-                    <img src={images[activeIndex]} className="w-full h-full object-cover absolute" />
-                </div>
-                <div className="h-96 flex items-center">
-                    <div className="flex justify-between items-center absolute  w-full px-4">
-                        <button onClick={handlePrev} className="bg-white p-2 rounded-full shadow" >
-                           <IconX />
-                        </button>
-                        <button onClick={handleNext}  className="bg-white p-2 rounded-full shadow">
-                           <IconX />
-                        </button>
+            <div className="flex justify-center">
+                <div className="w-full md:w-3/4 relative bg-black flex overflow-hidden">
+                    <div className="w-full h-full absolute">
+                        <img
+                            src={images[activeIndex]}
+                            className={`w-full h-full object-cover absolute transition-transform duration-700 ${direction === "next" ? "animate-slide-in" : "animate-slide-out"}`}
+                        />
+                    </div>
+                    <div className="h-96 flex items-center">
+                        <div className="flex justify-between items-center absolute w-full px-4">
+                            <button
+                                onClick={handlePrev}
+                                className="bg-white p-2 rounded-full shadow hover:bg-gray-200 transition duration-300"
+                            >
+                                <IconX />
+                            </button>
+                            <button
+                                onClick={handleNext}
+                                className="bg-white p-2 rounded-full shadow hover:bg-gray-200 transition duration-300"
+                            >
+                                <IconX />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> 
         </>
-    )
+    );
 }
