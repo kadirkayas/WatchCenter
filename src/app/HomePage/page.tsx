@@ -27,11 +27,6 @@ export default function HomePage(){
             <Navbar/>
             <Carousel/>
             <Promotion/>
-
-
-
-
-
             <div className="flex justify-center">
                 <div className="flex flex-col gap-1 mr-5">
                     <CategoryBox onClick={()=>setFilteredData(data.filter(item => item.category === 'men'))}>Best Seller</CategoryBox>

@@ -16,9 +16,6 @@ const config: Config = {
       height: { 
         '128': '32rem',
       },
-      fontFamily: {
-        
-    },
     },
   },
   plugins: [],

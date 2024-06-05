@@ -6,7 +6,7 @@ export default function Product({params}:{params:{name:string}}) {
     
   return(
     <>
-      <div>
+      <div className="">
         {filteredData.map((item, index) => (
           <div>{item.name}{item.price}</div>
         ))}
