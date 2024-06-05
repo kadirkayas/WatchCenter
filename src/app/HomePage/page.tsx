@@ -4,6 +4,7 @@ import Carousel from "@/components/Carousel";
 import Navbar from "@/components/Navbar";
 import data from "../../data/data.json";
 import { ReactNode, useEffect, useState } from "react";
+import Promotion from "@/components/Promotion";
 
 interface CategoryBox {
     children: ReactNode;
@@ -25,9 +26,12 @@ export default function HomePage(){
         <div className="bg-stone-50">
             <Navbar/>
             <Carousel/>
-            <div className="pl-20">
-                item
-            </div>
+            <Promotion/>
+
+
+
+
+
             <div className="flex justify-center">
                 <div className="flex flex-col gap-1 mr-5">
                     <CategoryBox onClick={()=>setFilteredData(data.filter(item => item.category === 'men'))}>Best Seller</CategoryBox>

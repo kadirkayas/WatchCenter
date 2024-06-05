@@ -29,14 +29,3 @@
     animation: slide-out 0.7s forwards;
 }
 
-button {
-    background-color: white;
-    padding: 8px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #e2e2e2;
-}

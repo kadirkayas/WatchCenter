@@ -10,7 +10,7 @@ const images = [
 
 export default function Carousel() {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [direction, setDirection] = useState<"next" | "prev">("prev");
+    const [direction, setDirection] = useState("prev");
 
     function handleNext() {
         setDirection("next");
@@ -25,14 +25,14 @@ export default function Carousel() {
     return (
         <> 
             <div className="flex justify-center">
-                <div className="w-full md:w-3/4 relative bg-black flex overflow-hidden">
+                <div className="w-full md:w-4/5 relative h-96 md:h-128 bg-black flex overflow-hidden">
                     <div className="w-full h-full absolute">
                         <img
                             src={images[activeIndex]}
                             className={`w-full h-full object-cover absolute transition-transform duration-700 ${direction === "next" ? "animate-slide-in" : "animate-slide-out"}`}
                         />
                     </div>
-                    <div className="h-96 flex items-center">
+                    <div className="flex items-center">
                         <div className="flex justify-between items-center absolute w-full px-4">
                             <button
                                 onClick={handlePrev}
