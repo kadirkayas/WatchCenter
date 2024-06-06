@@ -3,8 +3,12 @@ import Card from "@/components/Card";
 import Carousel from "@/components/Carousel";
 import Navbar from "@/components/Navbar";
 import data from "../../data/data.json";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import Promotion from "@/components/Promotion";
+import News from "./News";
+import For from "./For";
+import BestSeller from "./BestSeller";
+import JoinMail from "./JoinMail";
 
 interface CategoryBox {
     children: ReactNode;
@@ -19,7 +23,7 @@ interface CategoryBox {
   );
 
 export default function HomePage(){
-    const [filteredData, setFilteredData] = useState(data.filter(item => item.category === 'men'));
+    const [filteredData, setFilteredData] = useState(data.filter(item => item.category.map(item => item === 'men')));
     
     return(
         <>
@@ -27,27 +31,12 @@ export default function HomePage(){
             <Navbar/>
             <Carousel/>
             <Promotion/>
-            <div className="flex justify-center">
-                <div className="flex flex-col gap-1 mr-5">
-                    <CategoryBox onClick={()=>setFilteredData(data.filter(item => item.category === 'men'))}>Best Seller</CategoryBox>
-                    <CategoryBox onClick={()=>setFilteredData(data.filter(item => item.category === 'men'))}>Men</CategoryBox>
-                    <CategoryBox onClick={()=>setFilteredData(data.filter(item => item.category === 'women'))}>Women</CategoryBox>
-                </div>
-                <div className="grid grid-cols-12 gap-4 w-3/5">
-                {
-                    filteredData.map((item, index) => (
-                        <Card productId={item.productId} name={item.name} imgUrl={item.imgUrl} price={item.price} star={item.star} />
-                    ))
-                }
-                </div>
-            </div>
-                
-            
+            <News/>
+            <For/>
+            <BestSeller/>   
+            <JoinMail/>
         </div>
         </>
     )
 }
 
-function fetchData() {
-    throw new Error("Function not implemented.");
-}
