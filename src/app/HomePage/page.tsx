@@ -9,6 +9,7 @@ import News from "./News";
 import For from "./For";
 import BestSeller from "./BestSeller";
 import JoinMail from "./JoinMail";
+import Footer from "@/components/Footer";
 
 interface CategoryBox {
     children: ReactNode;
@@ -27,7 +28,7 @@ export default function HomePage(){
     
     return(
         <>
-        <div className="bg-stone-50">
+        <div className="">
             <Navbar/>
             <Carousel/>
             <Promotion/>
@@ -35,6 +36,7 @@ export default function HomePage(){
             <For/>
             <BestSeller/>   
             <JoinMail/>
+            <Footer/>
         </div>
         </>
     )

@@ -16,7 +16,7 @@ const Card = ({ productId,name, imgUrl, price, star }: CardProps) => {
     
     return (
         <>
-            <div className={`col-span-12 md:col-span-6 lg:col-span-3  border border-white cursor-pointer hover:shadow-2xl transition-shadow duration-1000 ease-out bg-white hover:scale-110 `}>
+            <div className={`col-span-6 md:col-span-3 lg:col-span-3  border border-white cursor-pointer hover:shadow-2xl transition-shadow duration-1000 ease-out bg-white hover:scale-110 `}>
                 <Link href={`/product/${encodeURIComponent(productId)}`} >
                     <img src={imgUrl} alt={name} className="border-b w-full h-64 object-cover rounded-t-lg"/>
                 </Link>

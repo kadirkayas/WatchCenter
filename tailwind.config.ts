@@ -21,8 +21,13 @@ const config: Config = {
         '128': '32rem',
         "90%": "90%",
       },
+      backgroundColor: {
+        'for': '#D3B8AE',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+
+  ],
 };
 export default config;
