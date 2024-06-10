@@ -17,7 +17,7 @@ export default function Navbar(){
                 <div className="hidden md:block " >
                     <div className="flex lg:text-xl">
                         <a href="" className="lg:mx-10 p-5 text-amber-900">HOME</a> 
-                        <a href="" className="lg:mx-10 p-5 text-amber-900">MEN</a> 
+                        <Link href="/men" className="lg:mx-10 p-5 text-amber-900">MEN</Link>
                         <Link href="/women" className="lg:mx-10 p-5 text-amber-900">WOMEN</Link>
                         <a href="" className="lg:mx-10 p-5 text-amber-900">ABOUT</a> 
                         <div className="mx-5 flex justify-center items-center">

@@ -16,12 +16,14 @@ const Card = ({ productId,name, imgUrl, price, star }: CardProps) => {
     
     return (
         <>
-            <div className={`col-span-6 md:col-span-3 lg:col-span-3  border border-white cursor-pointer hover:shadow-2xl transition-shadow duration-1000 ease-out bg-white hover:scale-110 `}>
-                <Link href={`/product/${encodeURIComponent(productId)}`} >
-                    <img src={imgUrl} alt={name} className="border-b w-full h-64 object-cover rounded-t-lg"/>
-                </Link>
+            <div className={`col-span-6 md:col-span-3 lg:col-span-3  border border-white cursor-pointer hover:shadow-2xl bg-white`}>
+                <div className="overflow-hidden">
+                    <Link href={`/product/${encodeURIComponent(productId)}`}>
+                        <img src={imgUrl} alt={name} className="border-b w-full h-64 object-cover rounded-t-lg transition-shadow duration-1000 hover:scale-125 ease-out" />
+                    </Link>
+                </div>
                 
-                <div className="p-4">
+                <div className="p-4 ">
                     <div className="flex justify-between items-center mb-4">
                         <h2 className="font-bold text-lg text-gray-800 uppercase">{name}</h2>
                         <p className="font-medium text-lg text-gray-700">{price}</p>

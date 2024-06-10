@@ -1,13 +1,13 @@
+import List from "@/components/List";
 import Navbar from "@/components/Navbar";
-import womanPhoto from "@/public/her.jpg"
-import List from "./List";
-export default function WomanPage(){
+import menPhoto from "@/public/him.jpg"
+export default function MenPage(){
     return(
         <>
             <Navbar/>
             <div >  
                 <img className="w-90% md:w-4/5 h-128 object-cover object-top mx-5 md:m-auto" 
-                src={womanPhoto.src} alt="" />
+                src={menPhoto.src} alt="" />
             </div>
             <div className="flex justify-center flex-col w-90% md:w-4/5 mx-5 md:m-auto ">
                 <div className="flex justify-center mt-10">
@@ -22,7 +22,7 @@ export default function WomanPage(){
                     </p>
                 </div>
             </div>
-            <List/>
+            <List cins={"men"} />
         </>
     )
 }
